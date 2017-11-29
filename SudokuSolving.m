@@ -27,10 +27,29 @@
 
 function sol = SudokuSolver(sizeOfPuzzle, clues)
     %Get clues from input and make decoded matrix
-    
+    decodedMatrix = decodedMatrix(sizeOfPuzzle, clues)
     %Call makeA to find the A contraint matrix
     
     %Translate the solution
     
     %output the solution
 end
+
+function decoded = decodedMatrix(sizeOfPuzzle, clues)
+    % A three dimensional matrix that has (rows, cols, values)
+    % In the puzzle, if the first value is a 9, then this matrix would have
+    % a 1 at A(1,1,9);
+    holdM = zeros(sizeOfPuzzle, sizeOfPuzzle, sizeOfPuzzle);
+    for i = 1:2:size(clues,2)
+        %parsings the values and positions from the input vector
+        val = clues(i);
+        pos = clues(i+1);
+        rowNum = fix(pos/sizeOfPuzzle)+1;
+        colNum = rem(pos,sizeOfPuzzle);
+        %for every set of clues, setting the matrix value to one
+        holdM(rowNum, colNum, val) = 1;
+    end
+    decoded = holdM;
+end
+
+
