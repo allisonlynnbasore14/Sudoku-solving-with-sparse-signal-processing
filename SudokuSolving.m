@@ -53,3 +53,37 @@ function decoded = decodedMatrix(sizeOfPuzzle, clues)
 end
 
 
+function A = makeA(sizeOfPuzzle, M, clues)
+    Aclue = getAClue(sizeOfPuzzle, clues);
+    Acell = getACell(sizeOfPuzzle, M);
+    A = 1 ;
+end
+
+
+function clueA = getAClue(N, clues)
+    holdM = [];
+    for i=1:2:size(clues,2)
+        holdV = zeros(1,N^3);
+        val = clues(i);
+        pos = clues(i+1)
+        holdV(N*pos - N + val) = 1;
+        holdM = [holdM;holdV];
+    end
+    clueA = holdM;
+end
+
+
+function cellA = getACell(N, ~)
+    cells = [];
+
+    for i=1:N^2
+        startpos = (i-1)*N + 1;
+        cell = zeros(1,N^3);
+        cell(1, startpos:startpos + N -1) = ones(1, N);
+        cells = [cells ; cell]; 
+    end
+    
+    cellA = cells;
+end
+
+
