@@ -7,10 +7,10 @@
 
 
 %sizeofPuzzle is a singal number
-%clues is an array with alternating values of clues and locations
-%For example if there were two clues: a 7 in the first box and a 3 in the
-%last box, the clues array would be [7, 1, 3, 81] (assuming a 9 by 9
-%puzzle).
+%clues is an array with all values of the puzzle.
+% For example an input might be [0 0 0 0 2 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0],
+% sot that the position in the input vector corresponds to the position in
+% the overall matrix.
 
 % -  -  -  -  -  -  -  -  - -
 %|1 | 2| 3| 4| 5| 6| 7| 8| 9|
@@ -25,14 +25,33 @@
 % -  -  -  -  -  -  -  -  - -
 
 
+%Example Easy Puzzle1:
+%Clues = [8 0 0 9 3 0 0 0 2 0 0 9 0 0 0 0 4 0 7 0 2 1 0 0 9 6 0 2 0 0 0 0 0
+%0 9 0 0 6 0 0 0 0 0 7 0 0 7 0 0 0 6 0 0 5 0 2 7 0 0 8 4 0 6 0 3 0 0 0 0 5 
+%0 0 5 0 0 0 6 2 0 0 8]
+%Solution = is in image on github under "Easy Puzzle 1"
+
 function sol = SudokuSolver(sizeOfPuzzle, clues)
     %Get clues from input and make decoded matrix
-    decodedMatrix = decodedMatrix(sizeOfPuzzle, clues)
-    %Call makeA to find the A contraint matrix
     
+    clues = arrangeClues(clues)
+    decodedMatrix = decodedMatrix(sizeOfPuzzle, clues);
+    %Call makeA to find the A contraint matrix
+    A = makeA(sizeOfPuzzle, decodedMatrix, clues);
     %Translate the solution
     
     %output the solution
+end
+
+
+function clues = arrangeClues( Rawclues )
+    cluesHolder = [];
+    for i = 1:size(Rawclues, 2)
+        if(Rawclues(i) > 0)
+            cluesHolder = [cluesHolder Rawclues(i) i];
+        end
+    end
+    clues = cluesHolder;
 end
 
 function decoded = decodedMatrix(sizeOfPuzzle, clues)
@@ -46,12 +65,14 @@ function decoded = decodedMatrix(sizeOfPuzzle, clues)
         pos = clues(i+1);
         rowNum = fix(pos/sizeOfPuzzle)+1;
         colNum = rem(pos,sizeOfPuzzle);
+        if(colNum == 0)
+            colNum = 10;
+        end
         %for every set of clues, setting the matrix value to one
         holdM(rowNum, colNum, val) = 1;
     end
     decoded = holdM;
 end
-
 
 function A = makeA(sizeOfPuzzle, M, clues)
     Aclue = getAClue(sizeOfPuzzle, clues);
@@ -85,5 +106,3 @@ function cellA = getACell(N, ~)
     
     cellA = cells;
 end
-
-
