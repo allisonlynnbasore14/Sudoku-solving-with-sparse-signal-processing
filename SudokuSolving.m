@@ -77,7 +77,10 @@ end
 function A = makeA(sizeOfPuzzle, M, clues)
     Aclue = getAClue(sizeOfPuzzle, clues);
     Acell = getACell(sizeOfPuzzle, M);
-    A = 1 ;
+    Abox = Abox(sizeOfPuzzle);
+    Arow = Arow(sizeOfPuzzle);
+    Acol = Acol(sizeOfPuzzle);
+    A = [Arow ; Acol ; Abox; Acell ; Aclue] ;
 end
 
 
