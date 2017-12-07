@@ -60,10 +60,10 @@ http://www.tooplate.com/view/2090-kinetic
                             <p>This is our final project for QEA. For this project we made an algorithm that solves Sudoku puzzles with sparse signal processing techniques and authored an “overnight” assignment that describes our process and the mathematical understanding behind our algorithm.</p>
 							
 							<h4>How does it work?</h4>
-                            <p>INSERT MATH</p>
+                            <p>Please see the next few sections for more details on our mathematical analysis and its connection to signal processing.</p>
 
                             <h4>What were the results?</h4>
-                            <p>INSERT Results</p>
+                            <p>Please see our results section for more information on the implementation and, of course, the results.</p>
                             <div class="primary-button">
                               <a href="#t3">Discover More</a>
                             </div>
@@ -81,29 +81,28 @@ http://www.tooplate.com/view/2090-kinetic
 			
 			
 		<div class="page" id="p3">
-                    <li class="icon fa fa-book"><span class="title">Get Started</span>
+                    <li class="icon fa fa-book"><span class="title">Undetermined Systems </span>
                     <div class="container">
                       <div class="row">
                         <div class="col-md-6">
-                          <div class="left-text">
-							<h4>Who are we?</h4>
-                            <p>We are Prava Dhulipalla and Allison Basore, students at Olin College of Engineering. Both of us are Electrical and Computer Engineering majors in the class Quantitative Engineering Analysis (QEA). </p>
-
-                            <h4>What is this project?</h4>
-                            <p>This is our final project for QEA. For this project we made an algorithm that solves Sudoku puzzles with sparse signal processing techniques and authored an “overnight” assignment that describes our process and the mathematical understanding behind our algorithm.</p>
-							
-							<h4>How does it work?</h4>
-                            <p>INSERT MATH</p>
-
-                            <h4>What were the results?</h4>
-                            <p>INSERT Results</p>
-                            <div class="primary-button">
-                              <a href="#t3">Discover More</a>
+                          <div class="right-text">
+                            <p>You might look at a sudoku puzzle, and then look at a signal (probably represented graphically in Matlab or some sort of Waveform-showing device - if you can see signals in the air you’re probably hallucinating), and think “these are two very different things”. In one way, you would be right. In another way, you would be wrong, and your mother would be disappointed in you.</p>
+				  <p>What is sudoku? Yes, it is a puzzle. But it is also an underdetermined system of equations -  when represented in a linear form, there are fewer equations than there are variables. The equation for sudoku, if you set up the matrices right, is: </p>
+				  <p>b = Ax </p>
+				  <p>Where x is the matrix that represents the solution, A is the logic matrix representing the logic formation, and b is a matrix of all 1s representing that all of the logic constraints have been met accordingly. However, for a 9 x 9 puzzle, the matrix A has more columns than rows - this means it is underdetermined. </p>
+				  <p>Similarly, there a comparable equation in signal processing:</p>
+				  <p>y = Ac</p>
+				  <p>Where y is the original signal, A is the N-point Fourier Transform matrix, and c is the coefficient matrix. You will recognize this if you have ever done anything with the Fourier Transform - an algorithm that figures out those coefficients.</p>
+				  <p>However, what if your signal is garbage? You have a few pixels missing from an image, or your mixtape was so fire you lost some of the samples. What do you do now? Well, you could realize that now, you have an underdetermined system of equations. And then you could rejoice, because you remember reading a website on a SUPER AWESOME SUDOKU SOLVER QEA II FINAL PROJECT that had the answers to your troubles!</p>
+				  <p>One way to solve underdetermined systems of equations is through convex optimization? But what is convexity? And what is optimization? Well, I’ll tell you.</p>
+				  
+				  <div class="primary-button">
+                              <a href="#t4">Convexity</a>
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <div class="right-image">
+                          <div class="left-image">
                             <img src="img/right-about-image.png" alt="">
                           </div>
                         </div>
