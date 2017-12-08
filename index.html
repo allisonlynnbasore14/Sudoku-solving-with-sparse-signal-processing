@@ -33,12 +33,14 @@ http://www.tooplate.com/view/2090-kinetic
           <div class="ct" id="t2">
             <div class="ct" id="t3">
               <div class="ct" id="t4">
+                <div class="ct" id="t5">
                 <section>  
                  <ul>
                    <a href="#t1"><li class="icon fa fa-home" id="uno"></li></a>
                    <a href="#t2"><li class="icon fa fa-book" id="dos"></li></a>
-		   <a href="#t3"><li class="icon fa fa-frown-o" id="tres"></li></a>
-                   <a href="#t4"><li class="icon fa fa-book" id="cuatro"></li></a>
+		               <a href="#t3"><li class="icon fa fa-circle-thin" id="tres"></li></a>
+                   <a href="#t4"><li class="icon fa fa-plus" id="cuatro"></li></a>
+                   <a href="#t5"><li class="icon fa fa-line-chart" id="cinco"></li></a>
                  </ul>
 			
                   <div class="page" id="p1">
@@ -79,7 +81,7 @@ http://www.tooplate.com/view/2090-kinetic
 			
 			
 		<div class="page" id="p3">
-                    <li class="icon fa fa-frown-o"><span class="title">Undetermined Systems </span>
+                    <li class="icon fa fa-circle-thin"><span class="title">Undetermined Systems </span>
                     <div class="container">
                       <div class="row">
                         <div class="col-md-6">
@@ -110,13 +112,37 @@ http://www.tooplate.com/view/2090-kinetic
                   </div>  
 			
                   <div class="page" id="p4">
-                    <li class="icon fa fa-book"><span class="title"> Convexity </span>
+                    <li class="icon fa fa-plus"><span class="title"> Convexity </span>
                     <div class="container">
                       <div class="row">
                         <div class="col-md-6">
                           <div class="left-text">
 				  <p>A convex set is a set of points that, given any two points within that set, the line segment joining of them also entirely lies within that set. A nonconvex function, thus, has the property that a line segment joining two points within that set can lie outside that set. The reason that this distinction is important is due to the fact that, as it turns out, a convex function is actually easier to solve. This is because it has one locally optimal minimum, whereas a nonconvex function has many locally optimal minima. It takes a lot of time to solve for these minima, let alone know whether any of them are feasible. </p>
 				  <p>Luckily for us, both of our underdetermined systems of equations are convex. Accordingly, we can use convex optimization algorithms to help solve our problem.</p>
+          <p>
+          Convex optimization helps us minimize convex functions over functions over convex sets. There are numerous convex optimization algorithms, however we’ll discuss only one here (for now).
+          </p>
+          <p>
+          In order to solve the sudoku puzzle, we used L1 norm minimizations, which minimizes the L1 norm constrained to the b = Ax equation:
+          </p><p>
+          minimize ||x||1
+          subject to b = Ax
+          </p><p>
+          The L1 norm is simply the summation of the absolute value of all of a vector’s components - and here we are minimizing it! If we add up all the absolute values of the function so that it equals a constant, you’ll find that it forms a diamond shape. The line that represents the solutions, then, will intersect with one of the corners of the diamond. Thus, if the constraints are well-set up and the problem is feasible, we can find a unique solution for an underdetermined system of equations.
+          </p><p>
+          Signal processing uses the same L1 norm minimization, often call basis pursuit:
+          </p><p>
+          minimize ||x||1
+          subject to y = Ac
+          </p><p>
+          The actual logistics behind the minimization are exactly the same, except the equation that it is subject to is a little different - the equation that pertains to signals. This especially helps when you want to recreate a signal at a higher frequency resolution than you actually have samples for. However, this begs the question - when would you need to do that? Making hardware that samples at a rate that meets the Nyquist sampling theorem is hard and costly, and so their tradeoff is using convex minimization techniques to “fill in the gaps,” and having less costly and area-consuming hardware.
+          </p><p>
+          Overall, the field of sparse signal processing, and especially compressive sensing (which deals with underdetermined systems of equations) has a lot of underlying mathematical concepts pertaining to many different problems/systems. Yes, sudoku is one of them, but there is also machine learning/deep learning, automatic control systems, finances and statistics, etc. And that is what this project is about - sometimes we get so wrapped up in a particular application that we can’t see it’s potential uses outside of that field. This project sure solved that for us - to the point where we feel burdened by our newfound knowledge. Just kidding . . . mostly. 
+          </p>
+
+                            <div class="primary-button">
+                              <a href="#t5">Results</a>
+                            </div>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -128,6 +154,50 @@ http://www.tooplate.com/view/2090-kinetic
                     </div>
                     </li>
                   </div>  
+
+                  <div class="page" id="p5">
+                    <li class="icon fa fa-line-chart"><span class="title"> Results </span>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="left-text">
+          <p>
+            
+            Over the course of the project, we completed two algorithms for solving Sudoku problems, ran performance comparisons, write a problem set about our algorithms, made an adventure map of the project, and made a demonstration presentation.
+            </p><p>
+            Algorithm Results:
+            </p><p>
+            Chart/Table???
+            </p><p>
+            Demo:
+            Videos of our demo can be found here:
+            </p><p>
+            INSERT
+            </p><p>
+            Presentation:
+            </p><p>
+            Our presentation slide deck that describes the other applications of our algorithm can be found here:
+            </p><p>
+            Code:
+            </p><p>
+            Our code for the algorithms can be found here:
+            </p><p>
+            Gallery:
+            </p><p>
+            Check out our gallery of photos and graphs
+
+          </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="right-image">
+                            <img src="img/right-about-image.png" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </li>
+                  </div> 
 			
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

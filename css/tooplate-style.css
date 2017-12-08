@@ -72,6 +72,13 @@ section {
   background-size: cover;
 }
 
+#p5 {
+  left: 300%;
+  background-image: url(../img/contact-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 ul {
  position: fixed; 
  z-index: 1;
@@ -89,9 +96,14 @@ ul {
     transform: translateX(-290%);
 }
 
+#t5:target .page#p5 {
+    transform: translateX(-290%);
+}
+
 #t2:target ul, 
 #t3:target ul,
-#t4:target ul {
+#t4:target ul,
+#t5:target ul {
   background-color: rgba(48, 51, 60, 1);
 }
 
@@ -104,6 +116,7 @@ ul {
 
 #t2:target .page#p1 .icon, 
 #t3:target .page#p1 .icon,
+#t5:target .page#p1 .icon,
 #t4:target .page#p1 .icon {
   -webkit-filter: blur(5px);
   filter: blur(5px);
@@ -125,6 +138,7 @@ ul .icon:hover {
 
 #t2:target ul .icon,
 #t3:target ul .icon,
+#t5:target ul .icon,
 #t4:target ul .icon {
   transform: scale(1); 
   transition-delay: .1s;
@@ -149,6 +163,13 @@ ul .icon:hover {
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	-webkit-transition: all 0.2s linear;
+}
+
+#t5:target #cinco {
+  color: #8575aa;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
 }
 
 ul {
@@ -216,6 +237,10 @@ a {
   	height: 600px;
 }
 
+.page#p5 .icon {
+    height: 600px;
+}
+
 .page#p1 .icon {
   transform: translateX(0) !important;
 }
@@ -229,6 +254,10 @@ a {
 }
 
 #t4:target .page#p4 .icon {
+  transform: translateX(0) !important;
+}
+
+#t5:target .page#p5 .icon {
   transform: translateX(0) !important;
 }
 
@@ -473,6 +502,136 @@ a {
   -webkit-transition: all 0.3s linear;
 }
 
+
+
+#p5 .title {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+#p5 fieldset {
+  margin-top: -30px;  
+  margin-bottom: 15px;
+}
+
+#p5 input {
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 15px;
+  max-width: 100%;
+  height: 40px;
+  display: inline-block;
+  line-height: 40px;
+  font-size: 13px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#p5 input:focus {
+  outline: none!important;
+  box-shadow: none;
+}
+
+#p5 textarea {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  width: 100%;
+  max-width: 100%;
+  max-height: 180px;
+  height: 140px;
+  display: inline-block;
+  line-height: 40px;
+  font-size: 13px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none!important;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#p5 textarea:focus {
+    outline: none!important;
+    box-shadow: none;
+}
+
+#p5 button {
+  font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+  padding: 15px 25px;
+  background-color: #63adcc;
+  color: #fff;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  left: 0.5px;
+  border-radius: 25px;
+  border: 1px solid transparent;
+}
+
+#p5 button:hover {
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+}
+
+#p5 .right-info {
+  background-color: #fff;
+  padding: 30px;
+  color: #343434;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+#p5 .right-info p em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+#p5 .right-info .social-icons {
+  margin-top: 45px;
+}
+
+#p5 .right-info ol {
+  padding: 0;
+  margin: 0;
+}
+
+#p5 .right-info i {
+  margin-right: 10px;
+  color: #fff;
+  font-size: 15px;
+  width: 34px;
+  height: 34px;
+  background-color: #cdcdcd;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 34px;
+}
+
+#p5 .right-info i:hover {
+  background-color: #63adcc;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+
+
+
+
 @media (max-width: 600px){ 
 
   ul {
@@ -548,6 +707,23 @@ a {
 	#p4 .right-info {
 		padding: 20px;
 	}
+
+
+
+  .page#p5 .icon {
+      height: auto;
+      padding: 80px 0px;
+  }
+
+  #p5 .left-text {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  #p5 .right-image {
+    margin-bottom: 40px;
+  }
+
 
 	html, body, section, .page {
 	    position: absolute;
