@@ -46,35 +46,35 @@ section {
 
 #p1 {
   left: 0;
-  background-image: url(../img/home-bg.png);
+  background-image: url(../img/sig2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #p2 {
   left: 100%;
-  background-image: url(../img/about-bg.png);
+  background-image: url(../img/chalk.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #p3 {
   left: 200%;
-  background-image: url(../img/gallery-bg.png);
+  background-image: url(../img/chalk.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #p4 {
   left: 300%;
-  background-image: url(../img/contact-bg.png);
+  background-image: url(../img/chalk.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #p5 {
   left: 300%;
-  background-image: url(../img/contact-bg.png);
+  background-image: url(../img/chalk.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
